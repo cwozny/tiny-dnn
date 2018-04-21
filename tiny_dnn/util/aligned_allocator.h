@@ -113,6 +113,8 @@ private:
         return ::_aligned_malloc(size, align);
 #elif defined (__ANDROID__)
         return ::memalign(align, size);
+#elif defined (INTEGRITY)
+	return ::malloc(size);
 #elif defined (__MINGW32__)
         return ::_mm_malloc(size, align);
 #else // posix assumed

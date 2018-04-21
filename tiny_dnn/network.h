@@ -728,7 +728,7 @@ class network {
 
  protected:
     float_t fprop_max(const vec_t& in, int idx = 0) {
-        const vec_t& prediction = fprop(in, idx);
+        const vec_t& prediction = fprop(in);
         return *std::max_element(std::begin(prediction), std::end(prediction));
     }
 
