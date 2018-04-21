@@ -64,7 +64,7 @@
  * Enable Gemmlowp support.
  **/
 #ifdef USE_GEMMLOWP
-#if !defined(_MSC_VER) && !defined(_WIN32) && !defined(WIN32)
+#if !defined(_MSC_VER) && !defined(_WIN32) && !defined(WIN32) && !defined(INTEGRITY)
 #define CNN_USE_GEMMLOWP  // gemmlowp doesn't support MSVC/mingw
 #endif
 #endif  // USE_GEMMLOWP
