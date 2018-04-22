@@ -1,0 +1,9 @@
+#!gbuild
+#component target_resources
+[Project]
+default.ld
+flash.ld
+INTEGRITY.ld
+default.bsp
+sim800.notes
+$__BSP_DIR\default.con

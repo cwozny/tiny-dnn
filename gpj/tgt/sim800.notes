@@ -1,0 +1,41 @@
+Notes for SIM800 BSP
+
+o This is the BSP that should be used in conjunction with ISIMPPC,  the
+	INTEGRITY Simulator for PowerPC.
+o Although the BSP is based on PPC8xx family,  application code built for
+	any PowerPC variant should run successfully under ISIMPPC
+	(and this BSP).
+o Console output via a single simulated serial port is supported.   If
+	run from the command-line (e.g. isimppc kernel),  the output is 
+	displayed on the terminal (if applicable).    If invoked from
+	MULTI (which is done when system debugging the simulated kernel),
+	the output goes into the Target Window.
+o Debugging via a simulated ethernet port is supported.   The target IP address
+	used for the rtserv connection (see Development Guide for info
+	regarding Debugging with Rtserv) is the IP address or hostname of
+	the host computer running ISIMPPC.    Fast dynamic download is supported
+	if a TFTP server is properly setup on the host computer from which
+	rtserv is running (note: the MULTI/rtserv session can be on a
+	different host computer from the one running ISIMPPC).
+o TCP/IP sockets support is provided to target applications via the host TCP/IP
+	stack.  This means that the target's effective IP address is the same
+	as the host's, and applications on the host and simulated target cannot
+	listen on the same TCP/IP port.  As the host's TCP/IP stack is used
+	through emulation, there is no need to run a TCP/IP stack on the target. 
+o No other low level devices can currently be simulated.
+o The size of simulated RAM is specified in default.ld, and can be adjusted
+	as needed.  The simulated RAM size is specified as the difference
+	between the .ramstart and .ramlimit values.
+o Simulated ROM is supported, just as in other BSPs.  The size and location of
+	ROM are obtained from the linker directive file with which you link the
+	kernel.  For example, the flash.ld linker directive file is written for
+	using ROM.  flash.ld links and runs the kernel out of ROM, but it can
+	be easily modified to boot out of ROM and run out of RAM.  The comments
+	in flash.ld explain how to do this.
+o Only one ISIMPPC can be used for rtserv debugging on any given host computer 
+	at a time.  
+o System call handling and interception by ISIMPPC is disabled by default; to
+	enable it pass in "-X83" on the command line.  This will make Isim
+	handle syscalls made in physical space, but fprintf printing to the
+	console from physical space will no longer work.
+o Consult the ISIM chapter in the Development Guide for further info.
