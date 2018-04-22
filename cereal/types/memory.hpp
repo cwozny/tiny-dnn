@@ -423,3 +423,4 @@ namespace cereal
 
 #undef CEREAL_ALIGNOF
 #endif // CEREAL_TYPES_SHARED_PTR_HPP_
+

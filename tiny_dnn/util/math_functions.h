@@ -83,5 +83,5 @@ inline void moments(const tensor_t& in, serial_size_t spatial_dim, serial_size_t
         vector_div(*variance, std::max(1.0f, num_examples*spatial_dim-1.0f));
     }
 }
-
 }
+
