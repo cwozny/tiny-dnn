@@ -11,7 +11,7 @@
 	-delete
 
 	-DCNN_USE_DOUBLE
-	#-DCNN_SINGLE_THREAD
+	-DCNN_SINGLE_THREAD
 	
 tgt\INTEGRITY.ld
 ../../tiny-dnn/examples/sinus_fit/sinus_fit.cpp

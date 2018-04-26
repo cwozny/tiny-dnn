@@ -791,32 +791,32 @@ inline auto xiterable<D>::get_end(const S& shape, bool reverse) noexcept
 
 template <class D>
 template <class S>
-inline auto xiterable<D>::get_stepper_begin(const S& shape) noexcept
-  -> stepper {
+inline auto xiterable<D>::get_stepper_begin(const S& shape) noexcept -> stepper
+{
   return derived_cast().stepper_begin(shape);
 }
 
 template <class D>
 template <class S>
-inline auto xiterable<D>::get_stepper_end(const S& shape,
-                                          layout_type l) noexcept -> stepper {
+inline auto xiterable<D>::get_stepper_end(const S& shape, layout_type l) noexcept -> stepper
+{
   return derived_cast().stepper_end(shape, l);
 }
-
+/*
 template <class D>
 template <class S>
-inline auto xiterable<D>::get_stepper_begin(const S& shape) const noexcept
-  -> const_stepper {
+inline auto xiterable<D>::get_stepper_begin(const S& shape) const noexcept -> const_stepper
+{
   return derived_cast().stepper_begin(shape);
 }
 
 template <class D>
 template <class S>
-inline auto xiterable<D>::get_stepper_end(const S& shape, layout_type l) const
-  noexcept -> const_stepper {
+inline auto xiterable<D>::get_stepper_end(const S& shape, layout_type l) const noexcept -> const_stepper
+{
   return derived_cast().stepper_end(shape, l);
 }
-
+*/
 template <class D>
 inline auto xiterable<D>::derived_cast() -> derived_type& {
   return *static_cast<derived_type*>(this);

@@ -253,7 +253,7 @@ namespace cereal
         {
           // Checks whether there is a path from parent->child and returns a <dist, path> pair
           // dist is set to MAX if the path does not exist
-          auto checkRelation = [](std::type_index const & parentInfo, std::type_index const & childInfo) ->
+          auto checkRelation = [&](std::type_index const & parentInfo, std::type_index const & childInfo) ->
             std::pair<size_t, std::vector<PolymorphicCaster const *>>
           {
             if( PolymorphicCasters::exists( parentInfo, childInfo ) )
@@ -496,7 +496,7 @@ namespace cereal
         typename InputBindingMap<Archive>::Serializers serializers;
 
         serializers.shared_ptr =
-          [](void * arptr, std::shared_ptr<void> & dptr, std::type_info const & baseInfo)
+          [&](void * arptr, std::shared_ptr<void> & dptr, std::type_info const & baseInfo)
           {
             Archive & ar = *static_cast<Archive*>(arptr);
             std::shared_ptr<T> ptr;
@@ -507,7 +507,7 @@ namespace cereal
           };
 
         serializers.unique_ptr =
-          [](void * arptr, std::unique_ptr<void, EmptyDeleter<void>> & dptr, std::type_info const & baseInfo)
+          [&](void * arptr, std::unique_ptr<void, EmptyDeleter<void>> & dptr, std::type_info const & baseInfo)
           {
             Archive & ar = *static_cast<Archive*>(arptr);
             std::unique_ptr<T> ptr;
