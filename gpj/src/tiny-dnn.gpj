@@ -1,0 +1,8 @@
+#!gbuild
+#component integrity_dynamic_download
+[INTEGRITY Application]
+	-dynamic
+	-non_shared
+tgt\default.bsp
+tiny-dnn.int
+tiny-dnn_as0.gpj		[Program]

@@ -1,0 +1,17 @@
+#!gbuild
+#component integrity_virtual_address_space
+[Program]
+
+	-I../../
+	-I../cereal/include/
+
+	--exceptions
+	--c++11
+
+	-delete
+
+	-DCNN_USE_DOUBLE
+	-DCNN_SINGLE_THREAD
+	
+tgt\INTEGRITY.ld
+../../tiny-dnn/examples/sinus/tiny-dnn_as0.cpp
