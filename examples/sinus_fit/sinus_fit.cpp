@@ -13,6 +13,8 @@
 
 #include <iostream>
 
+#include "INTEGRITY.h"
+
 #include "tiny_dnn/tiny_dnn.h"
 
 int main() {
