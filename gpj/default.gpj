@@ -2,7 +2,6 @@
 macro __BSP_DIR=$__OS_DIR\sim800
 macro __BUILD_DIR=%expand_path(.)
 macro __OS_DIR=C:\ghs\int5010
-gbuildDir=c:\ghs\comp_201754
 primaryTarget=ppc_integrity.tgt
 customization=$__OS_DIR\target\integrity.bod
 #component top_level_project
