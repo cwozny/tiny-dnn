@@ -6,12 +6,12 @@
 	-I../cereal/include/
 
 	--exceptions
-	--c++11
+	--c++14
 
 	-delete
 
 	-DCNN_USE_DOUBLE
-	-DCNN_SINGLE_THREAD
+	#-DCNN_SINGLE_THREAD
 	
 tgt\INTEGRITY.ld
-../../tiny-dnn/examples/sinus/tiny-dnn_as0.cpp
+../../tiny-dnn/examples/sinus_fit/sinus_fit.cpp

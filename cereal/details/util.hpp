@@ -33,7 +33,7 @@
 #include <typeinfo>
 #include <string>
 
-#ifdef _MSC_VER
+#if defined(_MSC_VER) || defined(INTEGRITY)
 namespace cereal
 {
   namespace util
